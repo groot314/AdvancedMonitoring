@@ -4,5 +4,5 @@ nbproject
 .DS_Store
 .classpath
 .project
-build.xml
 manifest.mf
+/bin

@@ -1,0 +1,11 @@
+name: Troll
+main: me.groot314.AdvancedM.AdvancedM
+version: 1.0
+permissions:
+  am.am:
+    description: Allows you to call another player a trololol.
+    default: true
+commands:
+  am:
+    description: Am commands
+    usage: /am
