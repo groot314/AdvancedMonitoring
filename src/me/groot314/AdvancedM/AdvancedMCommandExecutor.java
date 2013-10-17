@@ -11,7 +11,7 @@ import org.bukkit.entity.Player;
 
 public class AdvancedMCommandExecutor implements CommandExecutor {
 	
-	ArrayList<String> output = new ArrayList<String>();
+	static ArrayList<String> output = new ArrayList<String>();
 
 	private AdvancedM plugin; //pointer to methods in main class
 	public AdvancedMCommandExecutor(AdvancedM plugin){
@@ -29,11 +29,14 @@ public class AdvancedMCommandExecutor implements CommandExecutor {
 			System.out.println(lip.get(i));
 			
 			for (int j = 0; j < pl.size(); j++) {
-				String pip = pl.get(j).getAddress().getAddress().getHostName();
+				String pip = pl.get(j).getAddress().getAddress().getHostAddress();
+				pip.replace("/", "");
 				if(pip == lip.get(j)){
 					out.add(pl.get(j).getName());
 				}
 			}
+			System.out.println(output);
+			output.clear();
 		}
 	}
 	

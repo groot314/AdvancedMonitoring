@@ -20,20 +20,22 @@ public class LoginListener implements Listener{
     @EventHandler(priority = EventPriority.HIGH)
     public void Login(PlayerLoginEvent event) {
         String pip = event.getPlayer().getAddress().getAddress().getHostAddress();
-        checkip(plugin.iplist, pip);
-
-        
+        pip.replace("/", "");
+        if(!(ipPresent(plugin.iplist, pip))){
+        	plugin.iplist.add(pip);
+        }
     }
     @EventHandler(priority = EventPriority.HIGH)
     public void Logout(PlayerQuitEvent event) {
         // Some code here
     }
     
-    public static void checkip(ArrayList<String> ipl,String pip){
+    public static boolean ipPresent(ArrayList<String> ipl,String pip){
     	for (int i = 0; i < ipl.size(); i++) {
 			if(ipl.get(i) == pip){
-				
+				return true;
 			}
 		}
+		return false;
     }
 }
