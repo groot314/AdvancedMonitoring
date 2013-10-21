@@ -3,7 +3,7 @@ main: me.groot314.AdvancedM.AdvancedM
 version: 1.0
 permissions:
   am.am:
-    description: Allows you to call another player a trololol.
+    description: Permissions to /AM
     default: true
 commands:
   am:

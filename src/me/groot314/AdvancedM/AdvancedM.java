@@ -2,6 +2,7 @@ package me.groot314.AdvancedM;
 
 import java.util.ArrayList;
 
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class AdvancedM extends JavaPlugin{
@@ -18,4 +19,5 @@ public class AdvancedM extends JavaPlugin{
 	}
 	
 	ArrayList<String> iplist = new ArrayList<String>();
+	ArrayList<Player> plist = new ArrayList<Player>();
 }
