@@ -19,11 +19,11 @@ public class LoginListener implements Listener{
  
     @EventHandler(priority = EventPriority.HIGH)
     public void Login(PlayerLoginEvent event) {
-        String pip = event.getPlayer().getAddress().getAddress().getHostAddress();
-        pip.replace("/", "");
+        String pip = event.getAddress().toString().split("/")[(event.getAddress().toString().split("/").length)-1].split(":")[0];
         if(!(ipPresent(plugin.iplist, pip))){
         	plugin.iplist.add(pip);
         }
+        plugin.plist.add(event.getPlayer());
     }
     @EventHandler(priority = EventPriority.HIGH)
     public void Logout(PlayerQuitEvent event) {
